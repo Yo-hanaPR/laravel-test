@@ -22,11 +22,9 @@ class PaymentController extends Controller
 
     public function payWithSuperWalletz(Request $request)
     {
-
         $request->validate([
             'amount' => 'required|integer|min:1', 
-            'currency' => 'required|string|max:3',
-            'callback_url' => 'required|url', 
+            'currency' => 'required|string|max:3'
         ]);
 
         
@@ -35,8 +33,7 @@ class PaymentController extends Controller
         
         $response = Http::post($superWalletzUrl, [
             'amount' => $request->amount,
-            'currency' => $request->currency,
-            'callback_url' => $request->callback_url,
+            'currency' => $request->currency
         ]);
 
         
@@ -55,8 +52,6 @@ class PaymentController extends Controller
 
     public function payWithEasyMoney(Request $request)
     {
-
-
         try{
             $request->validate([
                 'amount' => 'required|integer|min:0.01',

@@ -20,6 +20,7 @@
         <div class="row justify-content-center">
             <form action="{{route('process')}}" method="post">
                 @csrf
+                @csrf
                 <div class="form-group">
                     <label for="name">Payment method</label>
                     <select class="form-control" id="pay-method" name="pay-method">
