@@ -18,7 +18,7 @@
 <body class="font-sans antialiased">
     <div class="container">
         <div class="row justify-content-center">
-            <form action="/deposit" method="post">
+            <form action="{{route('process')}}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="name">Payment method</label>
